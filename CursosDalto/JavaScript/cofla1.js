@@ -2,6 +2,10 @@ dineroCofla = prompt("Cuanto dinero tiene Cofla?:");
 dineroRoberto = prompt("Cuanto dinero tiene Roberto?:");
 dineroJuan = prompt("Cuanto dinero tiene Juan?:");
 
+parseInt(dineroCofla)
+parseInt(dineroRoberto)
+parseInt(dineroJuan)
+
 precioPalitoAgua = 2;
 precioPalitoCrema = 5;
 precioBombonCrocante = 7;
