@@ -50,71 +50,71 @@
 
 // ----------------------- Ejercicio 2 ----------------------
 
-let cantidadAlumnos = prompt("Ingrese la cantidad de alumnos que hay en el curso:");
 let alumnos = [];
+let cantidad = 0;
 
 const validarSN = (d) =>{
     ToLowerCase(d)
-    if (d == "s" || d == "si" || d == "n" || d == "no"){
-        return true
-    }
-    else{
-        return false
-    }
-}
-
-const cargarAlumnos = (cantidad) => {
-    for (i=0 ; i<cantidad ; i++){
-        alumnos[i] = [prompt("Ingrese el nombre del Alumno " + (i+1) + " :"),0,0,0] 
+    while(d != "s" || d != "si" || d != "n" || d != "no"){
+        d = prompt("debe Ingresar S(si) o N(no) para seguir: ")
     }
 }
 
 const validarAsisetencia = () =>{
     ToLowerCase(d)
-    if (d == "a" || d == "p" ){
-        return true
-    }
-    else{
-        return false
+    while(d != "a" || d != "p"){
+        d = prompt("debe Ingresar a(Ausente) o P(presente) para seguir: ")
     }
 }
 
-cargarAlumnos(cantidadAlumnos);
+const cargarAlumnos = (alumnos) => {
+    let cantidadAlumnos = prompt("Ingrese la cantidad de alumnos que hay en el curso:");
+    for (i=0 ; i<cantidadAlumnos ; i++){
+        alumnos[i] = [prompt("Ingrese el nombre del Alumno " + (i+1) + " :"),0,0,0] 
+    }
+    return alumnos
+}
 
-const usarSisetma = () => {
+const mostrarDatosAlumnos = (alumnos) =>{
+    for(i=0;i<length(alumnos);i++){
+        alert(`${alumnos[i][0]} Tiene un total de ${alumnos[i][1]} asuentes, ${alumnos[i][2]} presentes, por lo que se tomo un total de ${alumnos[i][3]} asistencias.`)
+    }
+}
+
+const usarSisetma = (alumnos) => {
     let tomarAsistencia = prompt("Desea tomar asistencia? S/N (de no tomas asistencia saldras del sistema): ")
-    ToLowerCase(tomarAsistencia)
-    let validarTomaDeAsistencia = validarSN(tomarAsistencia)
-    while ((tomarAsistencia == "s" || tomarAsistencia == "si") && validarTomaDeAsistencia){
-        for (i=0 ; i<cantidadAlumnos; i++){
-            let asistenciaValidada = false;
-            while (!asistenciaValidada){
+    validarSN(tomarAsistencia)
+    while (tomarAsistencia == "s" || tomarAsistencia == "si"){
+        for (i=0 ; i<length(alumnos); i++){
+            let asistencia = prompt(`${alumnos[i][0]} esta a(ausente), p(presente):`)                
+            validarAsisetencia(asistencia)    
+            while (asistencia == "a" || asistencia == "p"){
+                if (asistencia == "a"){
+                    alumnos[i][1] += 1;
+                    alumnos[i][3] += 1;
+                }
+                else{
+                    alumnos[i][2] += 1;
+                    alumnos[i][3] += 1;
+                }
                 let asistencia = prompt(`${alumnos[i][0]} esta a(ausente), p(presente):`)                
-                ToLowerCase(asistencia)
-                asistenciaValidada = validarAsisetencia(asistencia)    
-            }
-            if (asistencia == "a"){
-                alumnos[i][1] += 1;
-                alumnos[i][3] += 1;
-            }
-            else{
-                alumnos[i][2] += 1;
-                alumnos[i][3] += 1;
-            }
-
+                validarAsisetencia(asistencia)                        
+            }   
         }
+        tomarAsistencia = prompt("Desea tomar asistencia? S/N (de no tomas asistencia saldras del sistema): ")
+        validarSN(tomarAsistencia)    
     }
+    mostrarDatosAlumnos(alumnos, cantidad)
+    alert("Gracias por usar nuestro sistema de asistencias!")
 }
 
-let usar = prompt("Desea Usar el Sistema de Asistencia: S/N")
-ToLowerCase(usar)
-valido = validarSN(usar);
+let usar = prompt("Desea Usar el Sistema de Asistencia: S/N");
+validarSN(usar);
 
-if(valido){
-    if( usar == "si" || usar == "s"){
-        usarSisetma()
-    }
-    else{
-        alert("adios, Vuelva Prontos!")
-    }
+if(usar == "si" || usar == "s"){
+    alumnos = cargarAlumnos(alumnos);
+    usarSisetma(alumnos)
+}
+else{
+    alert("adios, Vuelva Prontos!")
 }
