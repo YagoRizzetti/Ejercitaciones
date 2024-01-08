@@ -54,40 +54,54 @@ let alumnos = [];
 let cantidad = 0;
 
 const validarSN = (d) =>{
-    ToLowerCase(d)
-    while(d != "s" || d != "si" || d != "n" || d != "no"){
-        d = prompt("debe Ingresar S(si) o N(no) para seguir: ")
+    d = d.toLowerCase();
+    while(d != "s" && d != "si" && d != "n" && d != "no"){
+        d = prompt("debe Ingresar S(si) o N(no) para seguir: ");
+        d = d.toLowerCase();
     }
+    return d
 }
 
 const validarAsisetencia = () =>{
-    ToLowerCase(d)
-    while(d != "a" || d != "p"){
+    d = d.toLowerCase();
+    while(d != "a" && d != "p"){
         d = prompt("debe Ingresar a(Ausente) o P(presente) para seguir: ")
+        d = d.toLowerCase();
     }
+    return d
+}
+
+const validarNumero = (n,mensaje) => {
+    console.log(typeof(n));
+    while(!Number.isInteger(n)){
+        n = prompt(mensaje);
+    }
+    return n
 }
 
 const cargarAlumnos = (alumnos) => {
     let cantidadAlumnos = prompt("Ingrese la cantidad de alumnos que hay en el curso:");
+    cantidadAlumnos = parseInt(cantidadAlumnos);
+    cantidadAlumnos = validarNumero(cantidadAlumnos, "Ingrese la cantidad de alumnos que hay en el curso(Debe ingresar un numero entero):");
     for (i=0 ; i<cantidadAlumnos ; i++){
         alumnos[i] = [prompt("Ingrese el nombre del Alumno " + (i+1) + " :"),0,0,0] 
     }
-    return alumnos
+    return alumnos, cantidadAlumnos
 }
 
-const mostrarDatosAlumnos = (alumnos) =>{
-    for(i=0;i<length(alumnos);i++){
+const mostrarDatosAlumnos = (alumnos, cantidad) =>{
+    for(i=0;i<cantidad;i++){
         alert(`${alumnos[i][0]} Tiene un total de ${alumnos[i][1]} asuentes, ${alumnos[i][2]} presentes, por lo que se tomo un total de ${alumnos[i][3]} asistencias.`)
     }
 }
 
-const usarSisetma = (alumnos) => {
-    let tomarAsistencia = prompt("Desea tomar asistencia? S/N (de no tomas asistencia saldras del sistema): ")
-    validarSN(tomarAsistencia)
+const usarSisetma = (alumnos, cantidad) => {
+    let tomarAsistencia = prompt("Desea tomar asistencia? S/N (de no tomar asistencia saldras del sistema): ")
+    tomarAsistencia = validarSN(tomarAsistencia);
     while (tomarAsistencia == "s" || tomarAsistencia == "si"){
-        for (i=0 ; i<length(alumnos); i++){
+        for (i=0 ; i<cantidad; i++){
             let asistencia = prompt(`${alumnos[i][0]} esta a(ausente), p(presente):`)                
-            validarAsisetencia(asistencia)    
+            asistencia = validarAsisetencia(asistencia);    
             while (asistencia == "a" || asistencia == "p"){
                 if (asistencia == "a"){
                     alumnos[i][1] += 1;
@@ -98,22 +112,22 @@ const usarSisetma = (alumnos) => {
                     alumnos[i][3] += 1;
                 }
                 let asistencia = prompt(`${alumnos[i][0]} esta a(ausente), p(presente):`)                
-                validarAsisetencia(asistencia)                        
+                asistencia = validarAsisetencia(asistencia);                        
             }   
         }
         tomarAsistencia = prompt("Desea tomar asistencia? S/N (de no tomas asistencia saldras del sistema): ")
-        validarSN(tomarAsistencia)    
+        tomarAsistencia = validarSN(tomarAsistencia);    
     }
-    mostrarDatosAlumnos(alumnos, cantidad)
+    mostrarDatosAlumnos(alumnos, cantidad);
     alert("Gracias por usar nuestro sistema de asistencias!")
 }
 
 let usar = prompt("Desea Usar el Sistema de Asistencia: S/N");
-validarSN(usar);
+usar = validarSN(usar);
 
 if(usar == "si" || usar == "s"){
-    alumnos = cargarAlumnos(alumnos);
-    usarSisetma(alumnos)
+    alumnos, cantidad = cargarAlumnos(alumnos);
+    usarSisetma(alumnos, cantidad);
 }
 else{
     alert("adios, Vuelva Prontos!")
