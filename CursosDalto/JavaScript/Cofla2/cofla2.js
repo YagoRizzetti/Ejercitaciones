@@ -92,7 +92,9 @@ const cargarAlumnos = (alumnos) => {
 
 const mostrarDatosAlumnos = (alumnos, cantidad) =>{
     for(i=0;i<cantidad;i++){
-        alert(`${alumnos[i][0]} Tiene un total de ${alumnos[i][1]} asuentes, ${alumnos[i][2]} presentes, por lo que se tomo un total de ${alumnos[i][3]} asistencias.`)
+        let porcentajeAusente = (alumnos[i][1]*100)/alumnos[i][3];
+        let porcentajePresente = (alumnos[i][2]*100)/alumnos[i][3];
+        alert(`${alumnos[i][0]} Tiene un total de ${alumnos[i][1]} asuentes, ${alumnos[i][2]} presentes, por lo que se tomo un total de ${alumnos[i][3]} asistencias. %${porcentajeAusente} de ausentes y %${porcentajePresente} de Presentes`)
     }
 }
 
