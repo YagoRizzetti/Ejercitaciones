@@ -11,6 +11,10 @@ class Celular{
         this.precio = precio;
     }
 
+    mostrarInfo(){
+        let info = `Marca: ${this.marca} <br> Modelo: ${this.modelo} <br>`;
+    }
+
 }
 
 class CelularGamaMedia extends Celular{
@@ -35,5 +39,6 @@ const celular3 = CelularGamaMedia("Samsung","S10+","12 Mpx", "7 pulgadas","128 G
 const celular4 = CelularGamaMedia("Samsung","S20","16 Mpx", "7,2 pulgadas","128 Gb", "8 Gb", 450000,"Si","Si",3,"Si");
 const celular5 = CelularAltaGama("Samsung","S23 Ultra","24 Mpx", "8,6 pulgadas","516 Gb", "12 Gb", 1000000,"Si","Si",3,"Si","Si");
 const celular6 = CelularAltaGama("Iphone","14 Pro Max","12 Mpx", "7,8 pulgadas","516 Gb", "8 Gb", 1200000,"Si","Si",3,"Si","Si");
+
 
 
