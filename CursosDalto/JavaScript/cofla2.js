@@ -62,7 +62,7 @@ const validarSN = (d) =>{
     return d
 }
 
-const validarAsisetencia = () =>{
+const validarAsisetencia = (d) =>{
     d = d.toLowerCase();
     while(d != "a" && d != "p"){
         d = prompt("debe Ingresar a(Ausente) o P(presente) para seguir: ")
@@ -75,6 +75,7 @@ const validarNumero = (n,mensaje) => {
     console.log(typeof(n));
     while(!Number.isInteger(n)){
         n = prompt(mensaje);
+        n = parseInt(n);
     }
     return n
 }
@@ -102,18 +103,14 @@ const usarSisetma = (alumnos, cantidad) => {
         for (i=0 ; i<cantidad; i++){
             let asistencia = prompt(`${alumnos[i][0]} esta a(ausente), p(presente):`)                
             asistencia = validarAsisetencia(asistencia);    
-            while (asistencia == "a" || asistencia == "p"){
-                if (asistencia == "a"){
-                    alumnos[i][1] += 1;
-                    alumnos[i][3] += 1;
-                }
-                else{
-                    alumnos[i][2] += 1;
-                    alumnos[i][3] += 1;
-                }
-                let asistencia = prompt(`${alumnos[i][0]} esta a(ausente), p(presente):`)                
-                asistencia = validarAsisetencia(asistencia);                        
-            }   
+            if (asistencia == "a"){
+                alumnos[i][1] += 1;
+                alumnos[i][3] += 1;
+            }
+            else{
+                alumnos[i][2] += 1;
+                alumnos[i][3] += 1;
+            }
         }
         tomarAsistencia = prompt("Desea tomar asistencia? S/N (de no tomas asistencia saldras del sistema): ")
         tomarAsistencia = validarSN(tomarAsistencia);    
