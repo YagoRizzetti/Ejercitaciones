@@ -12,7 +12,9 @@ class Celular{
     }
 
     mostrarInfo(){
-        let info = `Marca: ${this.marca} <br> Modelo: ${this.modelo} <br>`;
+        let info = `Marca: ${this.marca} <br> Modelo: ${this.modelo} <br> Resolucion: ${this.resolucion} <br> Tamaño: ${this.tamaño} <br> Almacenamiento: ${this.almacenamiento} 
+        <br> Memoria: ${this.memoria} <br> Precio: ${this.precio} <br><br>`;
+        document.write(info);
     }
 
 }
@@ -24,6 +26,9 @@ class CelularGamaMedia extends Celular{
         this.detectorDeHuella = detectorDeHuella;
         this.cantidadDeCamaras = cantidadDeCamaras;
         this.camaraFrontal = camaraFrontal;
+    }
+    mostrarInfo(){
+        
     }
 }
 class CelularAltaGama extends CelularGamaMedia{
