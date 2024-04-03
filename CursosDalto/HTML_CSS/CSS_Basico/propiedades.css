@@ -1,0 +1,27 @@
+/* Bordes */
+p{
+    border-width: 5px; /*Tamaño del borde*/
+    border-style: solid; /*Estilo del borde*/
+    border-color: black; /*Color del borde*/
+    border-radius: 10px; /*Esquinas del borde*/
+    border: 5px solid black; /*Reempleza border-width, border-style y border-color en ese orden*/
+}
+
+/* Box sizing */
+div{
+    box-sizing: content-box; /* el tamaño de la caja(widht y height) se fija solo para el contenido, si se agrega padding y border el tamaño aumnenta por el tamaño de los mismos */
+    box-sizing: border-box; /* el tamaño de la caja queda fija teniendo en cuenta si se agrega padding y border se ajusta solo */
+}
+
+/* Colores */
+div{
+    color: rgba(red, green, blue, alpha); /* RGBA picker pagina web */
+}
+
+/* Unidades de Medida */
+
+/* los porcentajes se utilizan en un elemento y son con respecto al elemento padre que los contiene. Con el texto lo mismo solo que tiene en cuenta el font-size del elemento padre */
+
+/* la unidad "em" lo que hace es agarrar el tamaño del elemento padre y multiplicarlo por el valor que le demos al em en el hijo. Ejemplo: en el padre le damos un font-size de 40px y en el hijo le damos un font-size de 2em en el hijo va a ser entonces un font-size de 80px porque es 2*los 40px del font-size del padre */
+
+/* la unidad "rem" lo que hace es agarrar el tamaño del elemento Raiz(HTML) y multiplicarlo por el valor que le demos al rem en el elemento que estemos trabajando. Ejemplo: en el elemento html le damos un font-size de 40px y en nuetro le damos un font-size de 2em en nuetro elemento va a ser entonces un font-size de 80px porque es 2*los 40px del font-size del elemento raiz (html) */
