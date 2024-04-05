@@ -25,3 +25,45 @@ div{
 /* la unidad "em" lo que hace es agarrar el tamaño del elemento padre y multiplicarlo por el valor que le demos al em en el hijo. Ejemplo: en el padre le damos un font-size de 40px y en el hijo le damos un font-size de 2em en el hijo va a ser entonces un font-size de 80px porque es 2*los 40px del font-size del padre */
 
 /* la unidad "rem" lo que hace es agarrar el tamaño del elemento Raiz(HTML) y multiplicarlo por el valor que le demos al rem en el elemento que estemos trabajando. Ejemplo: en el elemento html le damos un font-size de 40px y en nuetro le damos un font-size de 2em en nuetro elemento va a ser entonces un font-size de 80px porque es 2*los 40px del font-size del elemento raiz (html) */
+
+/* la unidad "vh" lo que hace es tomar el total del tamaño del height. por ejemplo 80vh seria 80% del heigth del contenedor padre.*/
+
+/* la unidad "vw" lo que hace es tomar el total del tamaño del width. por ejemplo 80vw seria 80% del width del contenedor padre.*/
+
+div{
+    font-size: 2rem;
+    font-size: 0.5em;
+    background:50vh;
+    background:50vw;
+}
+
+/* Fondos */
+
+div{
+    background-color: blue;
+    background-image: url();
+    background-size: 100%; /* hace que la imagen se ajuste al 100% del tamaño del width */
+    background-size: contain; /* hace que la imagen entre(se ajusta para que entre completa tanto en width como en heigth) */
+    background-size: cover; /* hace que la imagen se vea como tiene que ser. puede estar cortada y eso ba a depender del tamaño del contenedor y se puede ajustar con background-position */
+    background-position: left;
+    background-position: right;
+    background-position: center;
+    background-position: top;
+    background-position: bottom;
+    background-repeat: no-repeat; /* hace que la imagen no se repita si el conenedor es mas grande que la imagen. el especio que quede libre va a tener el fondo del color que hayamos definido */
+    background-attachment: fixed; /* deja la imagen fija cuando scroleamos(le da un lindo efecto). se le puede poner un contenedor adentro con un fondo transparente medio oscurito para dejarlo mas facherito */
+    background:[url(),position,/,size,repeat,attachment,color]; /* es un shorthand donde podemos configurar todas las propiedades pasandolas en el orden aclarado. nos ahorramos lineas de codigo TENER EN CUENTA LA BARRA ENTRE LA PROPIEDAD POSITION Y SIZE*/
+}/*  */
+
+/* Gradientes */
+div{
+    background: linear-gradient(blue,transparent); /* linear-gradient es una funcion que debe recibir por parametro colores para hacer el gradiente. tambien puede recibir otro parametro en la primer posicion para especificar en que direccion va a ir el gradiente. ejemplo (to rigth,blue,transparent). puede recibir mas de 2 colores. tambien se puede especificar al lado de cada color el porcentaje que va a ocupar del contenedor */
+    background: radial-gradient(); /* hace un gradiente circular desde el centro hacia afuera del contenedor */
+}/*  */
+
+/* Sombras */
+div{
+    box-shadow: 0 0 40px 0 black; /*(Sombra para cajas, tambien pueden se imagenes con fondo o completas) el primer paramtro es para indicar cuanto se mueve la sombra horizontalmente, el segundo para indicar cuanto se mueve la sombra verticalmente, el tercero es para indicar que tanto desenfoque va a tener, el cuarto es el tamaño que va a extenderse la sombra, y por ultimo el color de la sombra  */
+    text-shadow: 0 0 5px black ; /* (Sombra para texto) funciona igual que la sombra para la caja pero no permite ingresar el parametro para el tamaño de la sombra. osea sin el parametro 4*/
+    filter: drop-shadow(0 0 10px black); /* (Sombra pra imagenes sin fondo) */
+}/*  */
