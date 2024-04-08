@@ -23,6 +23,7 @@
 <body>
     <form class="form-registro">
         <h2 class="title-form">Registrar Paciente</h2>
+        <!-- INPUTS SIMPLES -->
         <div class="form-input">
             <input class="input input-2" type="text" placeholder="Nombre">
             <input class="input input-2" type="text" placeholder="Apellido">
@@ -30,6 +31,26 @@
         <div class="form-input">
             <input class="input" type="email" placeholder="Email">
         </div>
+
+        <!-- SELECTS Y OPTIONS -->
+        <div class="form-input">
+            <select class="input-select" name="mascota">
+                <option value="perro">Opcion 1</option>
+                <option value="gato">Opcion 2</option>
+                <option value="conejo">Opcion 3</option>
+            </select>
+        </div>
+
+        <!-- DATALIST Y OPTIONS-->
+        <div class="form-input">
+            <input list="sexo" class="input-datalist" placeholder="Sexo">
+            <datalist id="sexo"  name="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </datalist>
+        </div>
+
+        <!-- TEXTAREA -->
         <div class="form-input">
             <!-- atributo "readonly" pone el campo solo de lectura por lo tanto el usuario no puede modificar los datos. se puede seleccionar el campo pero no modificar el contenido. ademas cuando se mande el formulario con los datos, los datos de este campo si se van a enviar  -->
             <!-- atributo "disabled" similar que el atributo readonly solo que el campo ademas de no poder modiciar los datos tampoco permite al usuario seleccionar el campo y cuando se envien los datos del formulario a un servidor los datos de este campo no se enviaran -->

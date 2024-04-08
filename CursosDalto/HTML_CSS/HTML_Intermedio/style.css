@@ -33,7 +33,7 @@ body{
 }
 
 /* Se pueden hacer que 2 o mas elementos tengan las mismas pripiedades seleccionandolos con una coma de por medio */
-.input , .textarea{
+.input , .textarea, .input-select, .input-datalist{
     width: 82%;
     height: 30px;
     margin: auto;
@@ -58,5 +58,16 @@ body{
     /* min-height: 200px; */
     font-family: sans-serif;
     padding: 10px 10px;
+    /* Este atributo todavia no salio pero cuando salga basicamente va a permitir que el textarea se vaya expandiendo hacia abajo a medida que vayamos escribiendo mas texto */
     form-sizing: content;
+}
+
+.input-select{
+    font-size: 15px;
+    color: #bbb;
+}
+
+option{
+    background: #222;
+    color: #bbb;
 }
