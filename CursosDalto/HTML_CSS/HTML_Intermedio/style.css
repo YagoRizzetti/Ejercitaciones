@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    width: 100%;
+    background: #222;
+}
+
+.form-registro{
+    width: 60%;
+    background: #4442;
+    margin: auto;
+    border-radius: 3px;
+    margin-top: 80px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 0 30px #bbb;
+}
+
+.title-form{
+    color: aliceblue;
+    margin: 20px 0 40px 0;
+    font-family: Georgia;
+    font-size: 25px;
+    font-weight: 100;
+    text-shadow: 0 0 5px #bbb;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.form-input{
+    font-family: sans-serif;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Se pueden hacer que 2 o mas elementos tengan las mismas pripiedades seleccionandolos con una coma de por medio */
+.input , .textarea{
+    width: 82%;
+    height: 30px;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border-width: 1px;
+    background: transparent;
+    border-color: #bbb;
+    padding: 5px 10px;
+    color: #bbb;
+}
+
+.input-2{
+    width: 40%;
+    margin: 0 1%;
+}
+
+.textarea{
+    max-width: 82%;
+    height: auto;
+    resize: none; /* risize "none" impiede que el usuario pueda cambiar el tamaño del textarea, risize "vertical" permite que el usuario pueda cambiar el tamaño del textarea solo verticalmente */
+    /* min-height: 200px; */
+    font-family: sans-serif;
+    padding: 10px 10px;
+    form-sizing: content;
+}

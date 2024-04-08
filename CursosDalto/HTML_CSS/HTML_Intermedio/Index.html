@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FAVICON icono que va en la ventana de la pagina -->
     <link rel="icon" href="Iconos/dog.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
     <!-- Este meta nos permite definir una descripcion sobre de que se trata nuestra pagina -->
     <meta name="description" content="Esta es una pagina para la administracion de una veterinaria de la ciudad de cordoba capital argentina. Permite la compra de productos asi como tambien el manejo de turnos para la revision de animales.">
     <!-- Este meta nos permite difinir palabras claves para de nustra pagina para cuando se realizen busquedas -->
@@ -20,6 +21,22 @@
     <title>veterinaria</title>
 </head>
 <body>
-    
+    <form class="form-registro">
+        <h2 class="title-form">Registrar Paciente</h2>
+        <div class="form-input">
+            <input class="input input-2" type="text" placeholder="Nombre">
+            <input class="input input-2" type="text" placeholder="Apellido">
+        </div>
+        <div class="form-input">
+            <input class="input" type="email" placeholder="Email">
+        </div>
+        <div class="form-input">
+            <!-- atributo "readonly" pone el campo solo de lectura por lo tanto el usuario no puede modificar los datos. se puede seleccionar el campo pero no modificar el contenido. ademas cuando se mande el formulario con los datos, los datos de este campo si se van a enviar  -->
+            <!-- atributo "disabled" similar que el atributo readonly solo que el campo ademas de no poder modiciar los datos tampoco permite al usuario seleccionar el campo y cuando se envien los datos del formulario a un servidor los datos de este campo no se enviaran -->
+            <!-- atributo "maxlength" indica el maximo de caracteres que se pueden escribir en el campo -->
+            <!-- atributo "rows" le indica al textarea que tenga una altura justa para escrbir x renglones por lo que es adaptable para distintos dispositivos o navegadores -->
+            <textarea class="textarea" rows="10" placeholder="Ingrese Comentario Aqui"></textarea>
+        </div>
+    </form>
 </body>
 </html>
