@@ -1,0 +1,20 @@
+body{
+    background-color: #222;
+    color: #bbb;
+    margin: 0;
+    padding-top: 20px;
+}
+
+details{
+    width: 80%;
+    margin: auto;
+    background-color: #4445;
+    padding: 8px 20px;
+    border: 1px solid #bbb3;
+    border-radius: 5px;
+
+}
+
+summary{
+    margin: 10px 0;
+}
