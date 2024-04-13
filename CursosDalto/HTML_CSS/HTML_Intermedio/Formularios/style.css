@@ -10,6 +10,7 @@ body{
     margin: auto;
     border-radius: 3px;
     margin-top: 80px;
+    margin-bottom: 40px;
     padding: 15px 20px;
     text-align: center;
     box-shadow: 0 0 30px #bbb;
@@ -30,6 +31,10 @@ body{
     font-family: sans-serif;
     width: 100%;
     margin-bottom: 15px;
+}
+
+.form-input-left{
+    text-align: left;
 }
 
 /* Se pueden hacer que 2 o mas elementos tengan las mismas pripiedades seleccionandolos con una coma de por medio */
@@ -87,4 +92,13 @@ option{
     font-size: 22px;
     padding: 0 10px;
     margin-left: 5px;
+}
+
+.label-Terminos{
+    color: #bbb;
+    text-align: left;
+}
+
+a{
+    color: #5ad;
 }
