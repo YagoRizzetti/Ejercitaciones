@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio y Video</title>
+</head>
+<body>
+    <!-- en el src ponemos el link del video, el atributo controls le agrega los botones con las funciones al video para poder pararlo adelantarlo y demas, el atributo autoplay hace que el video arranque a reprodusirse solo cuando el usuario interactura con la pagina se lo utiliza junto con el atributo muted, el atributo loopp permite que el video una vez terminado comienze de nuevo. si el video no lo puede mostrar el navegador por algun motivo se mostrara el taxto-->
+
+    <!-- La etiqueta track permite agregarle los subtitulos al video. el atributo default hace que los subtitulos aparezcan desde el principio sin que el usuario los ponga, la etiqueta kind definimos que son subtitulos, en la etiqueta srclang definimos el idioma, en el atributo label escribimos el nombre del idioma que va a ver el usuario para seleccionarlo-->
+    <video controls src="" autoplay muted loop><track src="" default kind="subtitles" srclang="es" label="Español (Latinoamerica)"> Tu navegador no soporta Video</video>
+    <audio src=""></audio>
+    <img loading="lazy" src="" alt="">
+    <!-- El Atributo loading con el valor lazy nos permite decirle al navegador que cargue un elemento en la pagina al ultimo de la carga de todos los elementos o cuando el usuario se encuentre en la parte de la pagina donde se tendria que mostrar el elemento. Esto se hace para que no se sobre cargue la pagina al arrancar si tiene muchas cosas.-->
+
+</body>
+</html>
