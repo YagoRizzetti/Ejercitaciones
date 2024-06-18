@@ -1,0 +1,35 @@
+/*  Selector por atributo */
+/*se utiliza los corchetes para seleccionar los atributos del elemento. se puede utilizar $ para hacer referencia a con que termina o ^ para hacer referencia a con que comienza. En el ejemplo siguiente seleccionamos todas las imagenes donde el valor del atributo src terminan con jpg*/
+img[src$="jpg"]{
+    width: 100%;
+}
+
+/* Selector Descenciente */
+/*forma de seleccionar elementos que estan dentro de otros elementos en este caso estamos seleccionando los elementos strong que estan dentro de elementos ul pero no son hijos directos sino que puede haber elementos contenedores entre ul y strong aunque se cumpla la consigna */
+ul strong{
+    color: red;
+}
+
+/* Selector por Hijo Directo */
+/* En ese caso seleccionamos los elementos Strong que son hijos directos de los elementos li utilizando el simbolo >. si en vez de li fuera ul no aplizaria ya que strong no es hijo directo de ul en el archivo index.html */
+li > span{
+    color: green;
+}
+
+/* Selector de hermano General */
+/* Seleccionamos todos los elementos de tal tipo que se encuentran despues de otro elemento utilizando el simbolo ~. en este caso seleccionamos a todos los elementos p que estan despues de los elementos h2 */
+h2 ~ p {
+    color: rgb(177, 61, 81);
+}
+
+/* Selector de hermano Adyacente */
+/* Seleccionamos el elemento INMEDIATO que le sigue a otro utilizando el simbolo +. en este caso seleccionamos a los primeros elementos p que estan despues de los elementos h2 */
+h2 + p {
+    color: rgb(81, 82, 170);
+}
+
+/* Seleccionar varios elementos */
+/* Seleccionamos mas de un elemento utilizando el simbolo , */
+h2 , p {
+    /* color: rgb(177, 61, 81); */
+}

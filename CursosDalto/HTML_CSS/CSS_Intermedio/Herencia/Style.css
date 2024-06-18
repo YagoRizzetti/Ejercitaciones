@@ -1,0 +1,17 @@
+body{
+    color: tomato;
+    font-family: sans-serif;
+}
+div{
+    color: blueviolet;
+}
+/* inherit se utiliza para heredar el valor de tal propiedad de el elemento padre. en este caso en el index el primer p va a tener el color tomato porque lo hereda del elemento body, mientras que el segundo p que se encuentra dentro del div va a tener un color blueviolet porque lo estaria heredando del elemento padre que en este caso seria el div  */
+p{
+    color: inherit;
+}
+
+/* initial lo utilizamos para que el elemento tenga el atributo con su valor por defecto. en este caso h1 tendria el color negro que se carga por defecto osea sin ser modificado y el font-family por defecto que se carga tambien */
+h1{
+    color: initial;
+    font-family: initial;
+}
